@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="app-header">
+        <div class="brand">
+          <span class="brand-mark">☀️</span>
+          <div class="brand-text">
+            <h1>Weather Dashboard</h1>
+            <p>Check live conditions anywhere in the world</p>
+          </div>
+        </div>
+      </header>
+
+      <main class="app-main">
+        <section class="search-panel">
+          <form class="search-form" id="search-form">
+            <label for="city-input" class="visually-hidden">Search city</label>
+            <div class="search-input-wrapper">
+              <input
+                type="text"
+                id="city-input"
+                class="search-input"
+                placeholder="Search for a city (e.g. London, New York)"
+                autocomplete="off"
+              />
+              <button type="submit" class="search-button">Search</button>
+            </div>
+          </form>
+
+          <section class="recent-searches" aria-label="Recent searches">
+            <div class="section-header">
+              <h2>Recent searches</h2>
+            </div>
+            <ul id="recent-searches-list" class="recent-searches-list">
+              <!-- Filled dynamically -->
+            </ul>
+          </section>
+        </section>
+
+        <section class="weather-panel">
+          <section class="weather-card" aria-live="polite">
+            <div class="weather-card-header">
+              <div class="location-meta">
+                <h2 id="location-name">Search for a city</h2>
+                <p id="location-extra" class="location-extra">
+                  No location selected yet
+                </p>
+              </div>
+              <div class="weather-meta">
+                <span id="weather-main" class="weather-main">—</span>
+                <span id="weather-icon" class="weather-icon" aria-hidden="true">
+                  <!-- Icon via JS / font / SVG -->
+                </span>
+              </div>
+            </div>
+
+            <div class="weather-card-body">
+              <div class="temp-block">
+                <div class="temp-primary">
+                  <span id="temp-value" class="temp-value">—</span>
+                  <span class="temp-unit">°C</span>
+                </div>
+                <p id="temp-feels" class="temp-feels">Feels like —</p>
+              </div>
+
+              <dl class="weather-stats">
+                <div class="weather-stat">
+                  <dt>Humidity</dt>
+                  <dd id="humidity-value">—%</dd>
+                </div>
+                <div class="weather-stat">
+                  <dt>Wind</dt>
+                  <dd id="wind-value">— km/h</dd>
+                </div>
+                <div class="weather-stat">
+                  <dt>Pressure</dt>
+                  <dd id="pressure-value">— hPa</dd>
+                </div>
+              </dl>
+            </div>
+
+            <div class="card-footer">
+              <p id="last-updated" class="last-updated">Last updated: —</p>
+            </div>
+
+            <div id="status-banner" class="status-banner status-banner--info">
+              <span id="status-text">Start by searching for a city.</span>
+            </div>
+          </section>
+
+          <section class="forecast-card">
+            <header class="section-header">
+              <h2>Upcoming forecast</h2>
+              <p class="section-subtitle">3–5 day forecast coming on Day 4</p>
+            </header>
+            <div class="forecast-placeholder">
+              <p>
+                For now, focus is on building the core current-weather
+                experience. We’ll extend this with a multi-day forecast later in
+                the project.
+              </p>
+            </div>
+          </section>
+        </section>
+      </main>
+
+      <footer class="app-footer">
+        <p>
+          Built as a practice project. Data provided by
+          <span class="api-placeholder">OpenWeatherMap API</span>.
+        </p>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
